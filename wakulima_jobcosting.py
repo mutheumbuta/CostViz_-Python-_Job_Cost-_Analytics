@@ -4,6 +4,7 @@ import logging
 import os
 import time
 from dotenv import load_dotenv
+import csv
 
 load_dotenv()
 
@@ -72,18 +73,18 @@ def convert(row, usd, eur):
         return row["COST"]
 
 # function to load excel with fallback for different engines
-def load_excel(file):
+def load_csv(file):
     try:
-        return pd.read_excel(file, engine="openpyxl")
+        return pd.read_csv(file)
     except Exception:
-        return pd.read_excel(file, engine="xlrd")
+        return pd.read_csv(file)
 
 # main processing function that orchestrates the entire workflow
 def process():
     try:
-        logging.info("Loading Excel file...")
+        logging.info("Loading CSV file...")
 
-        df = load_excel(INPUT_FILE)
+        df = load_csv(INPUT_FILE)
 
         validate(df)
 
@@ -109,7 +110,7 @@ def process():
 
         grouped["CURRENCY"] = "KES"
 
-        grouped.to_excel(OUTPUT_FILE, index=False)
+        grouped.to_csv(OUTPUT_FILE, index=False)
 
         logging.info(f"Cleaned file saved successfully: {OUTPUT_FILE}")
 
