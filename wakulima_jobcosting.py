@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-INPUT_FILE = "wakulimaagro_ltd.xlsx"
-OUTPUT_FILE = "wakulimaagro_cleaned.xlsx"
+INPUT_FILE = "wakulima_agro_limited.csv"
+OUTPUT_FILE = "wakulimaagro_cleaned.csv"
 
 API_KEY = os.getenv("EXCHANGE_API_KEY")
 
@@ -33,7 +33,7 @@ def retry_request(url, retries=3, delay=3):
         time.sleep(delay)
     return None
 
-# exgange rate fetcher with retry and fallback
+# exchange rate fetcher with retry and fallback
 def get_rates():
     if not API_KEY:
         logging.warning("Missing API key, using default rates")
