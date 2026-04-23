@@ -8,13 +8,13 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 CSV_FILE = "wakulimaagro_cleaned.csv"
 
 DB_CONFIG = {
-    "host": "mutheumbuta",
+    "host": "localhost",
     "user": "root",
     "password": "Mbuta@9989",
-    "database": "wakulima_agro_db"
+    "database": "wakulimaagro"
 }
 
-TABLE_NAME = "wakulima agro job costing"
+TABLE_NAME = "wakulima_agro_job_costing"
 
 def connect_db():
     try:
@@ -37,7 +37,7 @@ def create_table(cursor):
         cost_kes DECIMAL(10,2),
         production_cost DECIMAL(12,2),
         currency VARCHAR(10)
-    )
+    );
     """
     cursor.execute(query)
 
@@ -50,7 +50,7 @@ def upload_csv(conn):
 
         insert_query = f"""
         INSERT INTO {TABLE_NAME}
-        (item_code, product_name, category, quantity, uom, cost, production_cost, currency)
+        (item_code, product_name, category, uom, quantity, cost_kes, production_cost, currency)
         VALUES (%s,%s,%s,%s,%s,%s,%s,%s)
         """
 
@@ -68,16 +68,16 @@ def run_queries(conn):
 
     queries = {
         "Total Production Cost":
-        "SELECT SUM(production_cost) FROM products",
+        "SELECT SUM(production_cost) FROM wakulima_agro_job_costing",
 
         "Most Expensive Products":
-        "SELECT product_name, production_cost FROM products ORDER BY production_cost DESC LIMIT 5",
+        "SELECT product_name, production_cost FROM wakulima_agro_job_costing ORDER BY production_cost DESC LIMIT 5",
 
         "Products Per Category":
-        "SELECT category, COUNT(*) FROM products GROUP BY category",
+        "SELECT category, COUNT(*) FROM wakulima_agro_job_costing GROUP BY category",
 
         "Average Cost":
-        "SELECT AVG(cost) FROM products"
+        "SELECT AVG(cost_kes) FROM wakulima_agro_job_costing"
     }
 
     for title, query in queries.items():

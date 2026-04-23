@@ -11,7 +11,7 @@ load_dotenv()
 INPUT_FILE = "wakulima_agro_limited.csv"
 OUTPUT_FILE = "wakulimaagro_cleaned.csv"
 
-API_KEY = os.getenv("EXCHANGE_API_KEY")
+API_KEY = os.getenv("EXCHANGE_RATE_API_KEY")
 
 DEFAULT_USD = float(os.getenv("DEFAULT_USD_KES", 130))
 DEFAULT_EUR = float(os.getenv("DEFAULT_EUR_KES", 160))
