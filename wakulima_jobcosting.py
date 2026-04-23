@@ -13,7 +13,7 @@ OUTPUT_FILE = "wakulimaagro_cleaned.csv"
 
 API_KEY = os.getenv("EXCHANGE_API_KEY")
 
-DEFAULT_USD = float(os.getenv("DEFAULT_USD_KES", 150))
+DEFAULT_USD = float(os.getenv("DEFAULT_USD_KES", 130))
 DEFAULT_EUR = float(os.getenv("DEFAULT_EUR_KES", 160))
 
 logging.basicConfig(
@@ -21,7 +21,7 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-# function to retry API requests with exponential backoff
+# Retry API request
 def retry_request(url, retries=3, delay=3):
     for attempt in range(retries):
         try:
@@ -34,7 +34,7 @@ def retry_request(url, retries=3, delay=3):
         time.sleep(delay)
     return None
 
-# exchange rate fetcher with retry and fallback
+# Fetch exchange rates
 def get_rates():
     if not API_KEY:
         logging.warning("Missing API key, using default rates")
@@ -54,14 +54,14 @@ def get_rates():
 
     return DEFAULT_USD, DEFAULT_EUR
 
-# validation function to ensure required columns are present
+# Validate required columns
 def validate(df):
     required = ["ITEM CODE", "PRODUCT NAME", "QUANTITY", "COST", "CURRENCY"]
     missing = [col for col in required if col not in df.columns]
     if missing:
         raise ValueError(f"Missing columns: {missing}")
 
-# conversion function to convert costs to KES based on currency
+# Convert currency
 def convert(row, usd, eur):
     currency = str(row["CURRENCY"]).upper()
 
@@ -72,14 +72,25 @@ def convert(row, usd, eur):
     else:
         return row["COST"]
 
-# function to load excel with fallback for different engines
+# Load CSV
 def load_csv(file):
     try:
         return pd.read_csv(file)
-    except Exception:
-        return pd.read_csv(file)
+    except Exception as e:
+        logging.error(f"Error loading CSV: {e}")
+        raise
 
-# main processing function that orchestrates the entire workflow
+# Round numbers to two decimals
+def round_two_decimals(df):
+    numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns
+    df[numeric_cols] = df[numeric_cols].round(2)
+    return df
+
+# Sort product names alphabetically
+def sort_products(df):
+    return df.sort_values(by="PRODUCT NAME")
+
+# Main processing function
 def process():
     try:
         logging.info("Loading CSV file...")
@@ -109,6 +120,12 @@ def process():
         logging.info(f"TOTAL COST OF PRODUCTION: {total:,.2f} KES")
 
         grouped["CURRENCY"] = "KES"
+
+        # Apply rounding
+        grouped = round_two_decimals(grouped)
+
+        # Sort alphabetically
+        grouped = sort_products(grouped)
 
         grouped.to_csv(OUTPUT_FILE, index=False)
 
