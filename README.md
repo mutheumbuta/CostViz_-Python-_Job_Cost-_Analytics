@@ -49,7 +49,9 @@ The system was built to:
 6. Support data-driven manufacturing optimization
 
 ## Technologies Used
+
 Technology	Purpose
+
 1.  Python	Data processing & ETL pipeline
   
 2.  MySQL	Production cost database
@@ -183,7 +185,7 @@ Material Usage Insights
 
 ```bash
 
-git clone https://github.com/yourusername/wakulima-job-costing-analysis.git
+git clone https:https://github.com/mutheumbuta/CostViz_-Python-_Job_Cost-_Analytics.git
 
 cd wakulima-job-costing-analysis
 
