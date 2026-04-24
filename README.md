@@ -96,11 +96,16 @@ Manufacturing Cost Insights
 ## Project Structure  
 
 wakulima-job-costing-analysis
+
 │
+
 ├── data
+
 │   └── wakulimaagro_cleaned.csv
+
 │
 ├── scripts
+
 │   ├── clean_data.py
 │   ├── upload_to_mysql.py
 │   └── etl_pipeline.py
