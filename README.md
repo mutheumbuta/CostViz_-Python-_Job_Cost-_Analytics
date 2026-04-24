@@ -184,6 +184,7 @@ Material Usage Insights
 ```bash
 
 git clone https://github.com/yourusername/wakulima-job-costing-analysis.git
+
 cd wakulima-job-costing-analysis
 
 ````
@@ -225,13 +226,13 @@ MYSQL_DATABASE=wakulima_costing
 
 5️⃣ Load Data to MySQL
 
-python upload_to_mysql.py
+python wakulimaagrocsvsql.py
 
 
 6️⃣ Launch Dashboard
 ```bash
 
-streamlit run streamlit_dashboard.py
+streamlit run wakulimaagrostreamlit.py
 
 ```
 
