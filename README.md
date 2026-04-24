@@ -2,7 +2,7 @@
 
 ## Refrigerated Truck Manufacturing Cost Analysis
 
-## Job Costing Data Pipeline using Wakulima Agro lTD Data
+### Job Costing Data Pipeline using Wakulima Agro lTD Data
 
 ## Project Overview
 
@@ -93,37 +93,8 @@ Streamlit Dashboard
         
 Manufacturing Cost Insights
 
-## Project Structure  
 
-wakulima-job-costing-analysis
 
-│
-
-├── data
-
-│   └── wakulimaagro_cleaned.csv
-
-│
-├── scripts
-
-│   ├── clean_data.py
-
-│   ├── upload_to_mysql.py
-
-│   └── etl_pipeline.py
-
-│
-
-├── dashboard
-│   └── streamlit_dashboard.py
-
-│
-├── sql
-│   └── production_queries.sql
-│
-├── .env
-├── requirements.txt
-└── README.md
 
 ## Database Schema
 
@@ -264,17 +235,17 @@ streamlit run streamlit_dashboard.py
 
 The system enables manufacturers to identify:
 
-Materials contributing most to truck production cost
+* Materials contributing most to truck production cost
 
-Supplier cost dependencies
+* Supplier cost dependencies
 
-Opportunities for cost optimization
+* Opportunities for cost optimization
 
-High-value components requiring procurement negotiation
+* High-value components requiring procurement negotiation
 
-Production cost trends
+* Production cost trends
 
-These insights support better manufacturing planning and cost control.
+* These insights support better manufacturing planning and cost control.
 
 ## Skills Demonstrated
 
