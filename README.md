@@ -2,13 +2,13 @@
 
 ## Refrigerated Truck Manufacturing Cost Analysis
 
-### Job Costing Data Pipeline using Wakulima Agro lTD Data
+### Job Costing Data Pipeline using Wakulima Agro LTD Data
 
 ## Project Overview
 
-This project demonstrates the development of a data pipeline and analytics system for manufacturing job costing analysis using supply data from Wakulima Agro Limited.
+This project demonstrates the development of a data pipeline and analytics system for manufacturing job costing analysis using  data from a customer Wakulima Agro Limited.
 
-A manufacturing company producing refrigerated trucks uses raw material supply data from Wakulima Agro to analyze production costs, monitor component expenses, and generate business insights for operational efficiency.
+A manufacturing company producing refrigerated trucks uses raw material data from inventory  to analyze production costs, monitor component expenses, and generate business insights for operational efficiency.
 
 The project implements a complete data workflow that extracts raw material cost data, transforms it into structured format, stores it in a MySQL database, and visualizes production cost insights using **Streamlit dashboards.
 
@@ -28,7 +28,6 @@ The manufacturing company builds refrigerated transport trucks used in cold-chai
   
 * Fabrication materials
 
-Suppliers such as Wakulima Agro Limited provide these materials which contribute to the overall job cost of building each refrigerated truck.
 
 The goal of this project is to track, store, and analyze these material costs to understand the production cost structure.
 
