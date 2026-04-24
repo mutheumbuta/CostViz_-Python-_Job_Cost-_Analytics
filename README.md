@@ -107,11 +107,16 @@ wakulima-job-costing-analysis
 ├── scripts
 
 │   ├── clean_data.py
+
 │   ├── upload_to_mysql.py
+
 │   └── etl_pipeline.py
+
 │
+
 ├── dashboard
 │   └── streamlit_dashboard.py
+
 │
 ├── sql
 │   └── production_queries.sql
@@ -120,109 +125,172 @@ wakulima-job-costing-analysis
 ├── requirements.txt
 └── README.md
 
-📊 Database Schema
+## Database Schema
 
 The project stores production cost data in MySQL using the following structure:
 
 Column	Description
+
 id	Unique record identifier
+
 item_code	Supplier item code
+
 product_name	Raw material name
+
 category	Supplier category
+
 quantity	Quantity used
+
 uom	Unit of measure
+
 cost_kes	Unit material cost
+
 production_cost	Total production cost
+
 currency	Currency type
-📈 Example Business Queries
+
+## Example Business Queries
 Total Production Cost
+
 SELECT SUM(production_cost) AS total_production_cost
+
 FROM wakulima_job_costing;
 
 Top 10 Most Expensive Materials
+
 SELECT product_name, production_cost
+
 FROM wakulima_job_costing
+
 ORDER BY production_cost DESC
+
 LIMIT 10;
 
 Average Cost per Category
+
 SELECT category, AVG(cost_kes) AS avg_cost
+
 FROM wakulima_job_costing
+
 GROUP BY category;
 
-📊 Dashboard Features
+
+
+## Dashboard Features
 
 The Streamlit dashboard provides real-time production insights including:
 
 ✔ Total production cost
+
 ✔ Cost breakdown by material
+
 ✔ Supplier cost contribution
+
 ✔ High-cost component analysis
+
 ✔ Interactive data filtering
+
 ✔ Production cost visualization
 
 The dashboard allows manufacturing managers to quickly identify cost drivers in refrigerated truck production.
 
-📷 Example Dashboard
+## Example Dashboard
 
 Example dashboard views include:
 
 Production Cost Summary
+
 Cost Distribution by Component
+
 Top Cost Drivers
+
 Material Usage Insights
-🚀 How to Run the Project
+
+## How to Run the Project
+
 1️⃣ Clone Repository
+
+```bash
+
 git clone https://github.com/yourusername/wakulima-job-costing-analysis.git
 cd wakulima-job-costing-analysis
 
+````
+
 2️⃣ Create Virtual Environment
+
+```bash
+
 python -m venv venv
 
-
+````
 Activate:
+
+```bash
 
 venv\Scripts\activate
 
+```
 3️⃣ Install Dependencies
+```bash
+
 pip install -r requirements.txt
+
+```
 
 4️⃣ Configure Environment Variables
 
 Create .env
 
 MYSQL_HOST=localhost
+
 MYSQL_USER=root
+
 MYSQL_PASSWORD=yourpassword
+
 MYSQL_DATABASE=wakulima_costing
 
 5️⃣ Load Data to MySQL
+
 python upload_to_mysql.py
 
 6️⃣ Launch Dashboard
+```bash
+
 streamlit run streamlit_dashboard.py
 
-📊 Key Insights Generated
+```
+## Key Insights Generated
 
 The system enables manufacturers to identify:
 
 Materials contributing most to truck production cost
+
 Supplier cost dependencies
+
 Opportunities for cost optimization
+
 High-value components requiring procurement negotiation
+
 Production cost trends
 
 These insights support better manufacturing planning and cost control.
 
-📚 Skills Demonstrated
+## Skills Demonstrated
 
-This project demonstrates practical skills in:
+* This project demonstrates practical skills in:
 
-Data Engineering
-ETL Pipeline Development
-SQL Data Analysis
-Manufacturing Cost Analytics
-Data Visualization
-Dashboard Development
-Data Cleaning & Transformation
+* Data Engineering
+
+* ETL Pipeline Development
+
+* SQL Data Analysis
+
+* Manufacturing Cost Analytics
+
+* Data Visualization
+
+* Dashboard Development
+
+* Data Cleaning & Transformation
 
