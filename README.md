@@ -1,8 +1,10 @@
 # CostViz_-Python-_Job_Cost-_Analytics
 
-🚛 Refrigerated Truck Manufacturing Cost Analysis
-Job Costing Data Pipeline using Wakulima Agro Supply Data
-📌 Project Overview
+## Refrigerated Truck Manufacturing Cost Analysis
+
+## Job Costing Data Pipeline using Wakulima Agro lTD Data
+
+## Project Overview
 
 This project demonstrates the development of a data pipeline and analytics system for manufacturing job costing analysis using supply data from Wakulima Agro Limited.
 
@@ -12,12 +14,13 @@ The project implements a complete data workflow that extracts raw material cost 
 
 This portfolio project simulates a real-world manufacturing analytics environment where data is used to support strategic production and cost management decisions.
 
-🏭 Business Context
+## Business Context
 
 The manufacturing company builds refrigerated transport trucks used in cold-chain logistics. These trucks require several raw materials including:
 
-Aluminium structures
-Steel components
+* Aluminium structures
+
+* Steel components
 Mechanical fittings
 Structural bars
 Fabrication materials
@@ -26,7 +29,7 @@ Suppliers such as Wakulima Agro Limited provide these materials which contribute
 
 The goal of this project is to track, store, and analyze these material costs to understand the production cost structure.
 
-🎯 Project Objectives
+## Project Objectives
 
 The system was built to:
 
@@ -36,6 +39,7 @@ Monitor total job cost of refrigerated truck manufacturing
 Create data pipelines for cost monitoring
 Enable interactive dashboards for decision making
 Support data-driven manufacturing optimization
+
 🛠️ Technologies Used
 Technology	Purpose
 🐍 Python	Data processing & ETL pipeline
