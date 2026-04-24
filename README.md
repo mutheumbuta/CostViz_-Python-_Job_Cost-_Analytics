@@ -221,9 +221,12 @@ MYSQL_PASSWORD=yourpassword
 
 MYSQL_DATABASE=wakulima_costing
 
+
+
 5️⃣ Load Data to MySQL
 
 python upload_to_mysql.py
+
 
 6️⃣ Launch Dashboard
 ```bash
@@ -231,6 +234,8 @@ python upload_to_mysql.py
 streamlit run streamlit_dashboard.py
 
 ```
+
+
 ## Key Insights Generated
 
 The system enables manufacturers to identify:
@@ -265,3 +270,14 @@ The system enables manufacturers to identify:
 
 * Data Cleaning & Transformation
 
+## 📜 License
+
+This project is licensed under the MIT License.
+
+## Author
+
+Nancy Mutheu Mbuta
+
+email:mutheumbuta@gmail.com
+
+Github: mutheumbuta
