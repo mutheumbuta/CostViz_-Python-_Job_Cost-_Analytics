@@ -21,9 +21,12 @@ The manufacturing company builds refrigerated transport trucks used in cold-chai
 * Aluminium structures
 
 * Steel components
-Mechanical fittings
-Structural bars
-Fabrication materials
+  
+* Mechanical fittings
+ 
+* Structural bars
+  
+* Fabrication materials
 
 Suppliers such as Wakulima Agro Limited provide these materials which contribute to the overall job cost of building each refrigerated truck.
 
@@ -33,41 +36,65 @@ The goal of this project is to track, store, and analyze these material costs to
 
 The system was built to:
 
-Analyze production costs per material
-Identify high-cost components
-Monitor total job cost of refrigerated truck manufacturing
-Create data pipelines for cost monitoring
-Enable interactive dashboards for decision making
-Support data-driven manufacturing optimization
+1. Analyze production costs per material
 
-🛠️ Technologies Used
+2. Identify high-cost components
+ 
+3. Monitor total job cost of refrigerated truck manufacturing
+ 
+4. Create data pipelines for cost monitoring
+
+5. Enable interactive dashboards for decision making
+ 
+6. Support data-driven manufacturing optimization
+
+## Technologies Used
 Technology	Purpose
-🐍 Python	Data processing & ETL pipeline
-🐬 MySQL	Production cost database
-📊 Streamlit	Business intelligence dashboard
-🐼 Pandas	Data cleaning & transformation
-🔐 python-dotenv	Secure configuration management
-🗂 CSV	Raw material cost dataset
-📈 SQL	Production cost analysis queries
-⚙️ System Architecture
+1.  Python	Data processing & ETL pipeline
+  
+2.  MySQL	Production cost database
+  
+3.  Streamlit	Business intelligence dashboard
+
+4.  Pandas	Data cleaning & transformation
+
+5.  python-dotenv	Secure configuration management
+
+6.  CSV	Raw material cost dataset
+
+7. SQL	Production cost analysis queries
+
+## System Architecture
+
 Supplier Cost Data (CSV)
+
         │
         ▼
+        
 Data Cleaning & Transformation (Python + Pandas)
+
         │
         ▼
+        
 Structured Data Storage (MySQL Database)
+
         │
         ▼
+        
 SQL Queries for Production Insights
+
         │
         ▼
+        
 Streamlit Dashboard
+
         │
         ▼
+        
 Manufacturing Cost Insights
 
-📂 Project Structure
+## Project Structure  
+
 wakulima-job-costing-analysis
 │
 ├── data
