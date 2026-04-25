@@ -68,30 +68,15 @@ Technology	Purpose
 ## System Architecture
 
 Supplier Cost Data (CSV)
-
-        │
-        ▼
-        
+     
 Data Cleaning & Transformation (Python + Pandas)
-
-        │
-        ▼
-        
+          
 Structured Data Storage (MySQL Database)
-
-        │
-        ▼
-        
+             
 SQL Queries for Production Insights
-
-        │
-        ▼
-        
+            
 Streamlit Dashboard
-
-        │
-        ▼
-        
+              
 Manufacturing Cost Insights
 
 
